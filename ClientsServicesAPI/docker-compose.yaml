@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  apiclientsservices-db:
+    image: mcr.microsoft.com/mssql/server:2022-CU12-ubuntu-22.04
+    restart: unless-stopped
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "GBk35z.A0!Lz"
+      MSSQL_PID: "Developer"
+    ports:
+      - "14330:1433"
+    volumes:
+      - ./data/mssql/data:/var/opt/mssql/data

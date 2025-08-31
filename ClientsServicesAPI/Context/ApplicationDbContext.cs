@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ClientsServicesAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClientsServicesAPI.Context
 {
@@ -6,7 +7,8 @@ namespace ClientsServicesAPI.Context
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-
         }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Service> Services { get; set; }
     }
 }
